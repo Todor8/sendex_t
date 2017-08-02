@@ -1,2 +1,2 @@
 <?php
-class sxQueue extends xPDOSimpleObject {}
+class sxQueue extends xPDOSimpleObject {};
