@@ -59,7 +59,8 @@ class SendexHomeManagerController extends modExtraManagerController
         $this->addJavascript($this->Sendex->config['jsUrl'] . 'mgr/sendex.js');
         $this->addJavascript($this->Sendex->config['jsUrl'] . 'mgr/misc/utils.js');
         $this->addJavascript($this->Sendex->config['jsUrl'] . 'mgr/misc/combo.js');
-        $this->addJavascript($this->Sendex->config['jsUrl'] . 'mgr/widgets/items.grid.js');
+        $this->addJavascript($this->Sendex->config['jsUrl'] . 'mgr/widgets/newsletters.grid.js');
+		$this->addJavascript($this->Sendex->config['jsUrl'] . 'mgr/widgets/queues.grid.js');
         $this->addJavascript($this->Sendex->config['jsUrl'] . 'mgr/widgets/items.windows.js');
         $this->addJavascript($this->Sendex->config['jsUrl'] . 'mgr/widgets/home.panel.js');
         $this->addJavascript($this->Sendex->config['jsUrl'] . 'mgr/sections/home.js');

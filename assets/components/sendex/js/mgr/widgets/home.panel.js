@@ -19,17 +19,40 @@ Sendex.panel.Home = function (config) {
             defaults: {border: false, autoHeight: true},
             border: true,
             hideMode: 'offsets',
-            items: [{
-                title: _('sendex_items'),
-                layout: 'anchor',
-                items: [{
-                    html: _('sendex_intro_msg'),
-                    cls: 'panel-desc',
-                }, {
-                    xtype: 'sendex-grid-items',
-                    cls: 'main-wrapper',
-                }]
-            }]
+            items: [
+				{
+					// Имя вкладки
+					title: _('sendex_newsletters')
+					// Массив с содержимым
+					,items: [
+					// Блок HTML с описанием этой вкладки
+					{
+						html: _('sendex_newsletters_intro')
+						,border: false
+						,bodyCssClass: 'panel-desc'
+						,bodyStyle: 'margin-bottom: 10px'
+					}
+					// Вызов рабочей таблицы
+					,{
+						xtype: 'sendex-grid-newsletters'
+						,preventRender: true
+					}]
+				},
+				{
+					title: _('sendex_queues')
+					,items: [
+						{
+							html: _('sendex_queue_intro')
+							,border: false
+							,bodyCssClass: 'panel-desc'
+							,bodyStyle: 'margin-bottom: 10px'
+						},{
+							xtype: 'sendex-grid-queues'
+							,preventRender: true
+						}
+					]
+				}
+            ]
         }]
     });
     Sendex.panel.Home.superclass.constructor.call(this, config);

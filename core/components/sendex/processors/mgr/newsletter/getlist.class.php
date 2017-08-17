@@ -1,9 +1,9 @@
 <?php
 
-class SendexItemGetListProcessor extends modObjectGetListProcessor
+class sxNewsletterGetListProcessor extends modObjectGetListProcessor
 {
-    public $objectType = 'SendexItem';
-    public $classKey = 'SendexItem';
+    public $objectType = 'sxNewsletter';
+    public $classKey = 'sxNewsletter';
     public $defaultSortField = 'id';
     public $defaultSortDirection = 'DESC';
     //public $permission = 'list';
@@ -58,9 +58,9 @@ class SendexItemGetListProcessor extends modObjectGetListProcessor
         $array['actions'][] = array(
             'cls' => '',
             'icon' => 'icon icon-edit',
-            'title' => $this->modx->lexicon('sendex_item_update'),
-            //'multiple' => $this->modx->lexicon('sendex_items_update'),
-            'action' => 'updateItem',
+            'title' => $this->modx->lexicon('sendex_newsletter_update'),
+            //'multiple' => $this->modx->lexicon('sendex_newsletters_update'),
+            'action' => 'updateNewsletter',
             'button' => true,
             'menu' => true,
         );
@@ -69,9 +69,9 @@ class SendexItemGetListProcessor extends modObjectGetListProcessor
             $array['actions'][] = array(
                 'cls' => '',
                 'icon' => 'icon icon-power-off action-green',
-                'title' => $this->modx->lexicon('sendex_item_enable'),
-                'multiple' => $this->modx->lexicon('sendex_items_enable'),
-                'action' => 'enableItem',
+                'title' => $this->modx->lexicon('sendex_newsletter_enable'),
+                'multiple' => $this->modx->lexicon('sendex_newsletters_enable'),
+                'action' => 'enableNewsletter',
                 'button' => true,
                 'menu' => true,
             );
@@ -79,9 +79,9 @@ class SendexItemGetListProcessor extends modObjectGetListProcessor
             $array['actions'][] = array(
                 'cls' => '',
                 'icon' => 'icon icon-power-off action-gray',
-                'title' => $this->modx->lexicon('sendex_item_disable'),
-                'multiple' => $this->modx->lexicon('sendex_items_disable'),
-                'action' => 'disableItem',
+                'title' => $this->modx->lexicon('sendex_newsletter_disable'),
+                'multiple' => $this->modx->lexicon('sendex_newsletters_disable'),
+                'action' => 'disableNewsletter',
                 'button' => true,
                 'menu' => true,
             );
@@ -91,9 +91,9 @@ class SendexItemGetListProcessor extends modObjectGetListProcessor
         $array['actions'][] = array(
             'cls' => '',
             'icon' => 'icon icon-trash-o action-red',
-            'title' => $this->modx->lexicon('sendex_item_remove'),
-            'multiple' => $this->modx->lexicon('sendex_items_remove'),
-            'action' => 'removeItem',
+            'title' => $this->modx->lexicon('sendex_newsletter_remove'),
+            'multiple' => $this->modx->lexicon('sendex_newsletters_remove'),
+            'action' => 'removeNewsletter',
             'button' => true,
             'menu' => true,
         );
@@ -103,4 +103,4 @@ class SendexItemGetListProcessor extends modObjectGetListProcessor
 
 }
 
-return 'SendexItemGetListProcessor';
+return 'sxNewsletterGetListProcessor';

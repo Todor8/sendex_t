@@ -1,9 +1,9 @@
 <?php
 
-class SendexItemGetProcessor extends modObjectGetProcessor
+class sxNewsletterGetProcessor extends modObjectGetProcessor
 {
-    public $objectType = 'SendexItem';
-    public $classKey = 'SendexItem';
+    public $objectType = 'sxNewsletter';
+    public $classKey = 'sxNewsletter';
     public $languageTopics = array('sendex:default');
     //public $permission = 'view';
 
@@ -25,4 +25,4 @@ class SendexItemGetProcessor extends modObjectGetProcessor
 
 }
 
-return 'SendexItemGetProcessor';
+return 'sxNewsletterGetProcessor';

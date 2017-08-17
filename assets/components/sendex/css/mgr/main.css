@@ -25,3 +25,7 @@ ul.sendex-row-actions .actions-menu:after { content: " \f107"; }
 .x-field-search-clear:before { content: '\f00d' !important; }
 .x-field-search-go { right: 31px !important; border-radius: 0 !important; }
 .x-field-search-go:before { content: '\f002' !important; }
+
+sendex-list-item {font:normal 11px tahoma, arial, helvetica, sans-serif;padding:3px 10px 3px 10px;border:1px solid #fff;border-bottom:1px solid #eeeeee;white-space:normal;color:#555;cursor: pointer;}
+sendex-list-item:hover {background: #efefef;}
+sendex-list-item h3 {display:block;font:inherit;font-weight:bold;font-size: 1.1em;line-height: 1.1em;}

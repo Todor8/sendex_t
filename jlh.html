@@ -1,0 +1,127 @@
+<div class="outer col-xs-12">
+
+	<div class="col-xs-24 item [[!getOrientation?input=`[[+tv.image]]`]] [[+idx:mod:isequalto=`1`:then=`even`:else=`odd`]]">
+		<div class="row">
+			[[!getOrientation:is=`portrait`:then=`
+			<div class="borderwrap wrap"></div>
+			<div class="col-xs-12">
+				<div class="eventDate brwn it">[[+publishedon:dateUAEN2]]</div>
+				<h2 class="maxline" linecount="2">[[+pagetitle]]</h2>
+			</div>
+			<div class="col-xs-12">
+				<a href="[[~[[+id]]]]">
+					<div class="image">
+						<img src="[[+tv.image:phpthumbon=`w=350&h=500&zc=C`]]" alt="[[+pagetitle]]" class="img-responsive">
+					</div>
+				</a>
+			</div>
+			<div class="jevix it fs20 content col-xs-24">
+				[[+content:jevix:ellipsis=`200`]]
+
+				<div class="row">
+					<div class="col-xs-24">
+						<div class="col-xs-12">
+							<a class="details" href="[[~[[+id]]]]">[[bt?ua=`Детальніше`&en=`Read more`]]</a>
+						</div>
+						<div class="socials">
+							<div class="like">
+
+								[[!LikeDislike?
+								&name=`[[#[[BabelTranslation?resourceId=`[[+id]]`&contextKey=`web`]].pagetitle]]`
+								&rating=`type=1,tv=myLike,output=votes_up`
+								&likeId=`[[BabelTranslation?resourceId=`[[+id]]`&contextKey=`web`]]`
+								&category=`news`
+								&format=`{UP}`
+								]]
+
+								[[!SetLike?
+								&value=`[[!LikeDislike?
+								&tpl=`set-like-tpl`
+								&name=`[[#[[BabelTranslation?
+								&resourceId=`[[+id]]`
+								&contextKey=`web`]].pagetitle]]`
+								&likeId=`[[BabelTranslation?
+								&resourceId=`[[+id]]`
+								&contextKey=`web`]]`
+								&category=`news`]]`
+								&id=`[[+id]]`
+								]]
+
+							</div>
+							<div class="share">
+								<div selector="share-[[+id]]" id="share-[[+id]]" class="my-share2"
+									 my-services="vkontakte,facebook,odnoklassniki"
+									 my-size="m"
+									 my-title="[[+pagetitle:replace=`"=='`]]"
+								my-description="[[+content:notags:ellipsis=`100`:replace=`"=='`]]"
+								my-url="[[++site_url]][[~[[+id]]]]"
+								my-image="[[++http_host]][[+image]]"
+								my-lang="[[bt?en=`en`&ua=`uk`]]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		`:else=`
+		<div class="borderwrap wrap"></div>
+		<a href="[[~[[+id]]]]">
+			<div class="col-xs-24 image">
+				<img src="[[+tv.image:phpthumbon=`w=600&h=325&zc=C`]]" alt="[[+pagetitle]]" class="img-responsive">
+			</div>
+		</a>
+		<div class="col-xs-24">
+			<div class="eventDate brwn it">[[+publishedon:dateUAEN2]]</div>
+		</div>
+		<div class="jevix it fs20 content">
+			<h2>[[+pagetitle]]</h2>
+			[[+content:jevix:ellipsis=`200`]]
+		</div>
+
+		<div class="col-xs-12">
+			<a class="details" href="[[~[[+id]]]]">[[bt?ua=`Детальніше`&en=`Read more`]]</a>
+		</div>
+
+		<div class="socials col-xs-12">
+			<div class="like">
+
+				[[!LikeDislike?
+				&name=`[[#[[BabelTranslation?resourceId=`[[+id]]`&contextKey=`web`]].pagetitle]]`
+				&rating=`type=1,tv=myLike,output=votes_up`
+				&likeId=`[[BabelTranslation?resourceId=`[[+id]]`&contextKey=`web`]]`
+				&category=`news`
+				&format=`{UP}`
+				]]
+
+				[[!SetLike?
+				&value=`[[!LikeDislike?
+				&tpl=`set-like-tpl`
+				&name=`[[#[[BabelTranslation?
+				&resourceId=`[[+id]]`
+				&contextKey=`web`]].pagetitle]]`
+				&likeId=`[[BabelTranslation?
+				&resourceId=`[[+id]]`
+				&contextKey=`web`]]`
+				&category=`news`]]`
+				&id=`[[+id]]`
+				]]
+
+			</div>
+			<div class="share">
+				<div selector="share-[[+id]]" id="share-[[+id]]" class="my-share2"
+					 my-services="vkontakte,facebook,odnoklassniki"
+					 my-size="m"
+					 my-title="[[+pagetitle:replace=`"=='`]]"
+				my-description="[[+content:notags:ellipsis=`100`:replace=`"=='`]]"
+				my-url="[[++site_url]][[~[[+id]]]]"
+				my-image="[[++http_host]][[+image]]"
+				my-lang="[[bt?en=`en`&ua=`uk`]]">
+			</div>
+		</div>
+	</div>
+	`?input=`[[+tv.image]]`]]
+</div>
+</div>
+
+</div>

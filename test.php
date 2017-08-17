@@ -8,5 +8,5 @@ $modx->getService('error','error.modError');
 $modx->setLogLevel(modX::LOG_LEVEL_INFO);
 $modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
 
-echo '<pre>';
+echo '<pre>';//
 print_r($modx->config);

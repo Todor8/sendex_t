@@ -42,4 +42,29 @@ class Sendex
         $this->modx->lexicon->load('sendex:default');
     }
 
+	/**
+	 * Sends email with activation link
+	 *
+	 * @param $email
+	 * @param array $options
+	 *
+	 * @return string|bool
+	 */
+	public function sendEmail($email, array $options = array()) {
+		/** @var modPHPMailer $mail */
+		$mail = $this->modx->getService('mail', 'mail.modPHPMailer');
+		$mail->set(modMail::MAIL_BODY, $this->modx->getOption('email_body', $options, ''));
+		$mail->set(modMail::MAIL_FROM, $this->modx->getOption('email_from', $options, $this->modx->getOption('emailsender'), true));
+		$mail->set(modMail::MAIL_FROM_NAME, $this->modx->getOption('email_from_name', $options, $this->modx->getOption('site_name'), true));
+		$mail->set(modMail::MAIL_SUBJECT, $this->modx->getOption('email_subject', $options, $this->modx->lexicon('sendex_subscribe_activate_subject'), true));
+		$mail->address('to', $email);
+		$mail->address('reply-to', $this->modx->getOption('email_from', $options, $this->modx->getOption('emailsender'), true));
+		$mail->setHTML(true);
+		$response = !$mail->send()
+			? $mail->mailer->errorInfo
+			: true;
+		$mail->reset();
+		return $response;
+	}
+
 }

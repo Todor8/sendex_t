@@ -4,5 +4,17 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHP" type="php">
+        <CLASSES>
+          <root url="file://D:/Робота/MODx(aplication)/pdoTools-master" />
+          <root url="file://D:/Робота/MODx(version)/modx-2.5.0-pl" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://D:/Робота/MODx(aplication)/pdoTools-master" />
+          <root url="file://D:/Робота/MODx(version)/modx-2.5.0-pl" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

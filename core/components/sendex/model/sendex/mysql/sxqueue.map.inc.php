@@ -4,9 +4,9 @@ $xpdo_meta_map['sxQueue']= array (
   'version' => '1.1',
   'table' => 'sendex_queue',
   'extends' => 'xPDOSimpleObject',
-  'fields' => 
+  'fields' =>
   array (
-    'newsletter_id' => 0,
+    'queue_id' => 0,
     'subscriber_id' => 0,
     'timestamp' => 'CURRENT_TIMESTAMP',
     'email_to' => '',
@@ -16,9 +16,9 @@ $xpdo_meta_map['sxQueue']= array (
     'email_from_name' => '',
     'email_reply' => '',
   ),
-  'fieldMeta' => 
+  'fieldMeta' =>
   array (
-    'newsletter_id' => 
+    'queue_id' =>
     array (
       'dbtype' => 'int',
       'precision' => '10',
@@ -27,7 +27,7 @@ $xpdo_meta_map['sxQueue']= array (
       'null' => false,
       'default' => 0,
     ),
-    'subscriber_id' => 
+    'subscriber_id' =>
     array (
       'dbtype' => 'int',
       'precision' => '10',
@@ -36,14 +36,14 @@ $xpdo_meta_map['sxQueue']= array (
       'null' => true,
       'default' => 0,
     ),
-    'timestamp' => 
+    'timestamp' =>
     array (
       'dbtype' => 'timestamp',
       'phptype' => 'timestamp',
       'null' => false,
       'default' => 'CURRENT_TIMESTAMP',
     ),
-    'email_to' => 
+    'email_to' =>
     array (
       'dbtype' => 'varchar',
       'precision' => '255',
@@ -51,7 +51,7 @@ $xpdo_meta_map['sxQueue']= array (
       'null' => true,
       'default' => '',
     ),
-    'email_subject' => 
+    'email_subject' =>
     array (
       'dbtype' => 'varchar',
       'precision' => '255',
@@ -59,14 +59,14 @@ $xpdo_meta_map['sxQueue']= array (
       'null' => true,
       'default' => '',
     ),
-    'email_body' => 
+    'email_body' =>
     array (
       'dbtype' => 'text',
       'phptype' => 'string',
       'null' => true,
       'default' => '',
     ),
-    'email_from' => 
+    'email_from' =>
     array (
       'dbtype' => 'varchar',
       'precision' => '255',
@@ -74,7 +74,7 @@ $xpdo_meta_map['sxQueue']= array (
       'null' => true,
       'default' => '',
     ),
-    'email_from_name' => 
+    'email_from_name' =>
     array (
       'dbtype' => 'varchar',
       'precision' => '255',
@@ -82,7 +82,7 @@ $xpdo_meta_map['sxQueue']= array (
       'null' => true,
       'default' => '',
     ),
-    'email_reply' => 
+    'email_reply' =>
     array (
       'dbtype' => 'varchar',
       'precision' => '255',
@@ -91,17 +91,17 @@ $xpdo_meta_map['sxQueue']= array (
       'default' => '',
     ),
   ),
-  'indexes' => 
+  'indexes' =>
   array (
-    'newsletter_id' => 
+    'queue_id' =>
     array (
       'alias' => 'newsletter_id',
       'primary' => false,
       'unique' => false,
       'type' => 'BTREE',
-      'columns' => 
+      'columns' =>
       array (
-        'newsletter_id' => 
+        'newsletter_id' =>
         array (
           'length' => '',
           'collation' => 'A',
@@ -109,15 +109,15 @@ $xpdo_meta_map['sxQueue']= array (
         ),
       ),
     ),
-    'user_id' => 
+    'user_id' =>
     array (
-      'alias' => 'user_id',
+      'alias' => 'subscriber_id',
       'primary' => false,
       'unique' => false,
       'type' => 'BTREE',
-      'columns' => 
+      'columns' =>
       array (
-        'user_id' => 
+        'user_id' =>
         array (
           'length' => '',
           'collation' => 'A',
@@ -125,15 +125,15 @@ $xpdo_meta_map['sxQueue']= array (
         ),
       ),
     ),
-    'timestamp' => 
+    'timestamp' =>
     array (
       'alias' => 'timestamp',
       'primary' => false,
       'unique' => false,
       'type' => 'BTREE',
-      'columns' => 
+      'columns' =>
       array (
-        'timestamp' => 
+        'timestamp' =>
         array (
           'length' => '',
           'collation' => 'A',
@@ -141,18 +141,34 @@ $xpdo_meta_map['sxQueue']= array (
         ),
       ),
     ),
+	  'hash' =>
+	  array (
+			'alias' => 'hash',
+			'primary' => false,
+			'unique' => true,
+			'type' => 'BTREE',
+			'columns' =>
+				array (
+					  'hash' =>
+						  array (
+								'length' => '',
+								'collation' => 'A',
+								'null' => false,
+							  ),
+					),
+		  ),
   ),
-  'aggregates' => 
+  'aggregates' =>
   array (
-    'Newsletter' => 
+    'Queue' =>
     array (
-      'class' => 'sxNewsletter',
-      'local' => 'newsletter_id',
+      'class' => 'sxQueue',
+      'local' => 'queue_id',
       'foreign' => 'id',
       'cardinality' => 'one',
       'owner' => 'foreign',
     ),
-    'Subscriber' => 
+    'Subscriber' =>
     array (
       'class' => 'sxSubscriber',
       'local' => 'subscriber_id',
